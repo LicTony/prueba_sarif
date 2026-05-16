@@ -17,10 +17,13 @@ Esto es lo que más se parece a lo que verás cuando uses Checkmarx One de verda
 2. En la raíz del repositorio crea una carpeta llamada `.github`.
 3. Dentro de `.github` crea otra carpeta llamada `sarif`.
 4. Guarda tu archivo (por ejemplo, `checkmarx-example.sarif`) dentro de esa carpeta.
-5. Sube los archivos a GitHub (`commit` + `push`).
-6. Ve a tu repositorio en GitHub → pestaña **Security** → **Code scanning** (en el menú izquierdo).
+5. Crea un archivo de workflow en `.github/workflows/upload-sarif.yml` para procesar el reporte (ya lo tenés configurado en este repo).
+6. Sube los archivos a GitHub (`commit` + `push`).
+7. Espera a que termine la ejecución del workflow en la pestaña **Actions**.
+8. Ve a tu repositorio en GitHub → pestaña **Security** → **Code scanning** (en el menú izquierdo).
 
-GitHub detectará automáticamente el archivo y te mostrará las alertas como si las hubiera encontrado Checkmarx.
+GitHub leerá el archivo gracias al Action y te mostrará las alertas como si las hubiera encontrado Checkmarx de verdad. 
+*(Aclaración: Si tu repositorio es privado, GitHub requiere la licencia de GitHub Advanced Security para habilitar esta pestaña).*
 
 ### 2. Abrirlo fácilmente en VS Code
 
@@ -39,6 +42,6 @@ Puedes subir el archivo a estos visores web gratuitos:
 
 ### Resumen: ¿Qué te recomiendo hacer ahora?
 
-1. Crea un repositorio de prueba en GitHub.
-2. Sube tu archivo `.sarif` dentro de la carpeta `.github/sarif/`.
-3. Mira la sección **Security** → **Code scanning**.
+1. Crea un repositorio de prueba en GitHub (si es privado recordá lo de la licencia).
+2. Sube tu archivo `.sarif` en la carpeta `.github/sarif/` junto con el workflow `.github/workflows/upload-sarif.yml`.
+3. Espera a que termine el Action y mirá la sección **Security** → **Code scanning**.

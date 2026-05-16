@@ -1,0 +1,30 @@
+name: "Upload SARIF Report"
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+  # Permite ejecutarlo a mano desde la pestaña Actions
+  workflow_dispatch: 
+
+jobs:
+  upload-sarif:
+    name: Upload SARIF to Code Scanning
+    runs-on: ubuntu-latest
+    
+    # Permisos ESTRICTAMENTE NECESARIOS para que GitHub acepte el reporte
+    permissions:
+      security-events: write
+      actions: read
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          # Le pasamos la carpeta entera para que agarre cualquier .sarif que haya adentro
+          sarif_file: .github/sarif/
