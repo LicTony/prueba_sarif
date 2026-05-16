@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Checkmarx One",
+          "fullName": "Checkmarx One - SAST",
+          "version": "2025.4.0",
+          "informationUri": "https://checkmarx.com",
+          "rules": [
+            {
+              "id": "Java_Sql_Injection",
+              "name": "SQL Injection",
+              "shortDescription": {
+                "text": "SQL Injection"
+              },
+              "fullDescription": {
+                "text": "La aplicación construye sentencias SQL utilizando concatenación de cadenas de forma insegura."
+              },
+              "helpUri": "https://checkmarx.com/knowledge-base/sql-injection",
+              "properties": {
+                "tags": ["CWE-89", "OWASP Top 10", "Security", "High"],
+                "precision": "high",
+                "security-severity": "8.5"
+              }
+            }
+          ]
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true,
+          "commandLine": "cx scan create ...",
+          "startTimeUtc": "2026-05-16T14:30:00Z",
+          "endTimeUtc": "2026-05-16T14:32:45Z"
+        }
+      ],
+      "results": [
+        {
+          "ruleId": "Java_Sql_Injection",
+          "level": "error",
+          "message": {
+            "text": "High - SQL Injection - La query se construye concatenando parámetros de usuario."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/com/example/service/UserService.java",
+                  "uriBaseId": "%SRCROOT%",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 67,
+                  "startColumn": 32,
+                  "endLine": 67,
+                  "endColumn": 89
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "similarityId": "a1b2c3d4e5f67890",
+            "checkmarxResultHash": "f47ac10b58cc4372a567b0b3f8c9d0e1"
+          },
+          "relatedLocations": [
+            {
+              "id": 1,
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/com/example/service/UserService.java",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 45,
+                  "startColumn": 20
+                }
+              }
+            }
+          ],
+          "properties": {
+            "checkmarx": {
+              "severity": "High",
+              "cweId": "CWE-89",
+              "queryId": "Java_Sql_Injection",
+              "resultId": "12345678",
+              "state": "TO_VERIFY",
+              "similarityId": "a1b2c3d4e5f67890"
+            }
+          }
+        },
+        {
+          "ruleId": "Stored_XSS",
+          "level": "warning",
+          "message": {
+            "text": "Medium - Stored Cross-Site Scripting"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/resources/templates/user/profile.html",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 15
+                }
+              }
+            }
+          ],
+          "properties": {
+            "checkmarx": {
+              "severity": "Medium",
+              "cweId": "CWE-79"
+            }
+          }
+        }
+      ],
+      "properties": {
+        "checkmarxProjectId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "checkmarxScanId": "yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy",
+        "scanType": "SAST"
+      }
+    }
+  ]
+}
