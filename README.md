@@ -20,9 +20,17 @@ Esto es lo que más se parece a lo que verás cuando uses Checkmarx One de verda
 5. Crea un archivo de workflow en `.github/workflows/upload-sarif.yml` para procesar el reporte (ya lo tenés configurado en este repo).
 6. Sube los archivos a GitHub (`commit` + `push`).
 7. Espera a que termine la ejecución del workflow en la pestaña **Actions**.
+
+   ![Ejecución exitosa del Action](img/01-github-actions-success.png)
+
 8. Ve a tu repositorio en GitHub → pestaña **Security** → **Code scanning** (en el menú izquierdo).
 
+   ![Pestaña de Security](img/02-security-tab-overview.png)
+
 GitHub leerá el archivo gracias al Action y te mostrará las alertas como si las hubiera encontrado Checkmarx de verdad. 
+
+![Alertas de Code Scanning](img/03-code-scanning-alerts.png)
+
 *(Aclaración: Si tu repositorio es privado, GitHub requiere la licencia de GitHub Advanced Security para habilitar esta pestaña).*
 
 ### 2. Abrirlo fácilmente en VS Code
