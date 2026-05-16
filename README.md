@@ -1,4 +1,5 @@
 # prueba_sarif
+
 Prueba de un archivo .sarif
 
 ## ¿Qué es un archivo .sarif?
@@ -27,7 +28,7 @@ Esto es lo que más se parece a lo que verás cuando uses Checkmarx One de verda
 
    ![Pestaña de Security](img/02-security-tab-overview.png)
 
-GitHub leerá el archivo gracias al Action y te mostrará las alertas como si las hubiera encontrado Checkmarx de verdad. 
+GitHub leerá el archivo gracias al Action y te mostrará las alertas como si las hubiera encontrado Checkmarx de verdad.
 
 ![Alertas de Code Scanning](img/03-code-scanning-alerts.png)
 
@@ -44,7 +45,6 @@ GitHub leerá el archivo gracias al Action y te mostrará las alertas como si la
 Puedes subir el archivo a estos visores web gratuitos:
 
 * [SARIF Web Viewer](https://sarifweb.azurewebsites.net/)
-* [SARIF Viewer](https://www.sarifviewer.com/)
 
 ---
 

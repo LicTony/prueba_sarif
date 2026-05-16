@@ -49,8 +49,7 @@
               "physicalLocation": {
                 "artifactLocation": {
                   "uri": "src/main/java/com/example/service/UserService.java",
-                  "uriBaseId": "%SRCROOT%",
-                  "index": 0
+                  "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
                   "startLine": 67,
